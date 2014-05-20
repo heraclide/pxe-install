@@ -1,0 +1,24 @@
+# Intented to have a full working local repo for debian/ubuntu/fedora/....
+Meaning :
+- gateway ( masquerading )
+- dhcp ( dhcpd )
+- pxe ( dhcpd + tftp + nfs )
+- dns ( bind )
+- packages download ( bind+nginx )
+
+# pre-req :
+debian stable
+/opt larger 1To
+
+# bases packages : 
+apt-get install sudo screen isc-dhcp-server nfs-kernel-server nginx rsync vim tcpdump htop tftpd-hpa git build-essential
+
+# usage 
+cd / && git clone https://github.com/heraclide/pxe-install.git .
+
+reboot && enjoy
+
+# services configuration 
+dhcp : /etc/dhcp/*
+bind : /etc/named/*
+nfs : /etc/defaults/nfs*

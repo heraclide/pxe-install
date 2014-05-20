@@ -1,0 +1,11 @@
+$TTL  604800
+@ IN  SOA debian-multimedia.org. root.debian-multimedia.org. (
+            0   ; Serial
+       604800   ; Refresh
+        86400   ; Retry
+      2419200   ; Expire
+       604800 ) ; Negative Cache TTL
+;
+@ IN  NS  10.42.0.1
+@ IN  A 10.42.0.1
+www IN  A 10.42.0.1

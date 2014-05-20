@@ -1,0 +1,66 @@
+DEFAULT vesamenu.c32
+PROMPT 0
+MENU LABEL TITLE Serveur PXE de Parinux
+
+MENU INCLUDE pxelinux.cfg/graphics.conf
+
+#ghttp://syslinux.zytor.com/wiki/index.php/PXELINUX
+
+LABEL local
+	MENU LABEL Boot disque
+	MENU DEFAULT
+	localboot 0
+
+LABEL division0
+	MENU LABEL
+
+
+LABEL Ubuntu FR
+	MENU LABEL Ubuntu FR
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/ubuntu-fr.menu
+
+LABEL Ubuntu
+	MENU LABEL Ubuntu
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/ubuntu.menu
+
+LABEL division1
+        MENU LABEL
+
+LABEL Kubuntu
+        MENU LABEL Kubuntu
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/kubuntu.menu
+
+LABEL Lubuntu
+        MENU LABEL Lubuntu
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/lubuntu.menu
+
+LABEL Xubuntu
+        MENU LABEL Xubuntu
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/xubuntu.menu
+
+#LABEL Ubuntu NetBoot
+#        MENU LABEL Installation Ubuntu en NetBoot
+#        KERNEL vesamenu.c32
+#        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/ubuntu-netboot.menu
+
+LABEL Debian
+        MENU LABEL Debian
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/debian.menu
+
+LABEL Fedora
+        MENU LABEL Fedora
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/fedora.menu
+
+
+LABEL Sysresccd
+        MENU LABEL Sysresccd
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/sysresccd.menu
+

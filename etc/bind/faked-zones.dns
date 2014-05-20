@@ -1,0 +1,29 @@
+zone "debian-multimedia.org" {
+        type master;
+        file "/etc/bind/db.debian-multimedia.org";
+};
+
+zone "backports.org" {
+        type master;
+        file "/etc/bind/db.backports.org";
+};
+zone "debian.org" {
+        type master;
+        file "/etc/bind/db.debian.org";
+};
+
+zone "archive.ubuntu.com" {
+        type master;
+        file "/etc/bind/db.archive.ubuntu.com";
+};
+
+zone "security.ubuntu.com" {
+        type master;
+        file "/etc/bind/db.security.ubuntu.com";
+};
+
+zone "isos" {
+        type master ;
+        file "/etc/bind/db.isos";
+};
+

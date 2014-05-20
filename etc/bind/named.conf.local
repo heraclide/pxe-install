@@ -1,0 +1,14 @@
+logging {
+  channel dnssec_log {             // a DNSSEC log channel
+    file "/var/log/dnssec.log" size 20m;
+    print-time yes;        // timestamp the entries
+    print-category yes;    // add category name to entries
+    print-severity yes;    // add severity level to entries
+    severity debug 3;      // print debug message <= 3 t
+  };
+
+  category dnssec  { dnssec_log;  };
+};
+
+include "/etc/bind/faked-zones.dns" ;
+

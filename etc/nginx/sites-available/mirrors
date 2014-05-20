@@ -1,0 +1,73 @@
+server {
+  listen   80; ## listen for ipv4; this line is default and implied
+
+  root /opt/www/iso;
+  index index.html index.htm;
+  server_name isos;
+
+  location / {
+    allow all;
+  }
+
+        access_log /var/log/nginx/isos.access.log;
+        error_log /var/log/nginx/isos.org.errors.log;
+}
+
+server {
+        listen   80; ## listen for ipv4; this line is default and implied
+
+        root /opt/www/ubuntu;
+        index index.html index.htm;
+        server_name archive.ubuntu.com
+                    *.archive.ubuntu.com
+                    security.ubuntu.com
+                    *.security.ubuntu.com
+                    ;
+
+
+        location / {
+                allow all;
+        }
+
+        access_log /var/log/nginx/ubuntu.access.log;
+        error_log /var/log/nginx/ubuntu.org.errors.log;
+}
+
+server {
+        listen   80; ## listen for ipv4; this line is default and implied
+
+        root /opt/www/debian;
+        index index.html index.htm;
+        server_name ftp.fr.debian.org
+                    *.debian.org
+                    ;
+
+
+        location / {
+                allow all;
+        }
+
+        access_log /var/log/nginx/debian.access.log;
+        error_log /var/log/nginx/debian.org.errors.log;
+}
+
+
+server {
+        listen   80; ## listen for ipv4; this line is default and implied
+
+        root /opt/www/debian/debian-security;
+        index index.html index.htm;
+        server_name security.debian.org
+        *.security.debian.org
+                    ;
+
+
+        location / {
+                allow all;
+        }
+
+        access_log /var/log/nginx/security.debian.access.log;
+        error_log /var/log/nginx/security.debian.org.errors.log;
+}
+
+
