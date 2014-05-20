@@ -13,6 +13,11 @@ debian stable
 # bases packages : 
 apt-get install sudo screen isc-dhcp-server nfs-kernel-server nginx rsync vim tcpdump htop tftpd-hpa git build-essential
 
+# create neccessary directory structure
+mkdir /opt/{tftp,www}
+mkdir /opt/tftp/{debian,kubuntu,lubuntu,pxelinux.cfg,sysresccd,ubuntu,ubuntu-fr,xubuntu}
+mkdir /opt/www/{debian,ubuntu,iso}
+
 # usage 
 cd / && git clone https://github.com/heraclide/pxe-install.git .
 
