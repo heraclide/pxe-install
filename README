@@ -18,10 +18,12 @@ mkdir /opt/{tftp,www}
 mkdir /opt/tftp/{debian,kubuntu,lubuntu,pxelinux.cfg,sysresccd,ubuntu,ubuntu-fr,xubuntu}
 mkdir /opt/www/{debian,ubuntu,iso}
 
-# usage 
+# install
 cd / && git clone https://github.com/heraclide/pxe-install.git .
 
-reboot && enjoy
+# usage 
+make --ignore-errors -C /opt/www  debian-all debian-iso-all update-pxe-debian 2>&1 >/var/log/rsync-debian/`date +%Y%m%d`.log
+make --ignore-errors -C /opt/www ubuntu-all ubuntu-iso-all update-pxe-ubuntu 2>&1 >/var/log/rsync-ubuntu/`date +%Y%m%d`.log
 
 # services configuration 
 dhcp : /etc/dhcp/*
