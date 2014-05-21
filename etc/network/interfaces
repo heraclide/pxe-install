@@ -10,5 +10,4 @@ iface eth1 inet static
         netmask 255.255.0.0
         network 10.42.0.0
         broadcast 10.42.255.255
-EOF
 
