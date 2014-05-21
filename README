@@ -26,8 +26,8 @@ git fetch
 git checkout -t origin/master
 
 # usage 
-make --ignore-errors -C /opt/www  debian-all debian-iso-all update-pxe-debian 2>&1 >/var/log/rsync-debian/`date +%Y%m%d`.log
-make --ignore-errors -C /opt/www ubuntu-all ubuntu-iso-all update-pxe-ubuntu 2>&1 >/var/log/rsync-ubuntu/`date +%Y%m%d`.log
+make --ignore-errors -C /opt/scripts  debian-all debian-iso-all update-pxe-debian 2>&1 >/var/log/rsync-debian/`date +%Y%m%d`.log
+make --ignore-errors -C /opt/scripts ubuntu-all ubuntu-iso-all update-pxe-ubuntu 2>&1 >/var/log/rsync-ubuntu/`date +%Y%m%d`.log
 
 # services configuration 
 dhcp : /etc/dhcp/*
