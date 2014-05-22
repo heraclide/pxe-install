@@ -145,8 +145,8 @@ iso: debian-iso-all fedora-iso-all mageia-iso-all mandriva-iso-all ubuntu-iso-al
 
 .PHONY: sysresccd-iso
 sysresccd-iso:
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/sysresccd /opt/www/iso/sysresccd
-	bash /opt/scripts/generate_pxe_for_sysresccd_isos.sh
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/sysresccd /opt/www/iso/sysresccd
+	bash ${PREFIX}/scripts/generate_pxe_for_sysresccd_isos.sh
 
 .PHONY: debian-all
 debian-all: debian debian-security debian-multimedia \
@@ -247,11 +247,11 @@ debian-iso:
 	--exclude '*source*' \
 	--exclude '*freebsd*' \
 	--exclude '*iso-hybrid*'   
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
 
 .PHONY: update-pxe-debian
 update-pxe-debian:
-	bash /opt/scripts/generate_pxe_for_debian_isos.sh
+	bash ${PREFIX}/scripts/generate_pxe_for_debian_isos.sh
 
 .PHONY: ubuntu-all
 ubuntu-all: ubuntu-first-step ubuntu-second-step medibuntu
@@ -330,8 +330,8 @@ ubuntu-iso:
 	--exclude *oneiric* \
 	--exclude *beta* \
 	--exclude *server*
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
 
 .PHONY: lubuntu-iso-cdimage
 lubuntu-iso-cdimage:
@@ -356,7 +356,7 @@ lubuntu-iso-cdimage:
 	--exclude *12.10* \
 	--exclude *13.04* \
         --no-checksum 
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
 
 .PHONY: kubuntu-iso-cdimage
 kubuntu-iso-cdimage:
@@ -382,7 +382,7 @@ kubuntu-iso-cdimage:
 	--exclude *12.10* \
 	--exclude *13.04* \
         --no-checksum 
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
 
 .PHONY: xubuntu-iso-cdimage
 xubuntu-iso-cdimage:
@@ -407,11 +407,11 @@ xubuntu-iso-cdimage:
 	--exclude *12.10* \
 	--exclude *13.04* \
         --no-checksum 
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
 
 .PHONY: update-pxe-ubuntu
 update-pxe-ubuntu:
-	bash /opt/scripts/generate_pxe_for_ubuntu_isos.sh
+	bash ${PREFIX}/scripts/generate_pxe_for_ubuntu_isos.sh
 
 .PHONY: fedora-all
 fedora-all: fedora fedora-updates fedora-rpmfusion
@@ -483,7 +483,7 @@ fedora-iso:
 	--include 'Live/***' \
 	--include 'img/***' \
 	--exclude '*' 
-	/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/fedora/ /opt/www/iso/fedora/fedora/
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/fedora/ /opt/www/iso/fedora/fedora/
 
 .PHONY: fedora-iso-alt
 fedora-iso-alt:
