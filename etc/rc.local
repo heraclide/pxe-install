@@ -12,15 +12,15 @@
 # By default this script does nothing.
 
 # en mode gros crado, en attendant que heraclide fasse ca propre
-/opt/www/loop-create.sh
+/opt/scripts/loop-create.sh
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/sysresccd /opt/www/iso/sysresccd
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
-/opt/www/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/sysresccd /opt/www/iso/sysresccd
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
 
 exit 0
 
