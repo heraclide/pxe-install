@@ -1,0 +1,13 @@
+$TTL  604800
+@ IN  SOA volatile.debian.org. root.debian.org. (
+            1   ; Serial
+       604800   ; Refresh
+        86400   ; Retry
+      2419200   ; Expire
+       604800 ) ; Negative Cache TTL
+;
+      NS  volatile.debian.org.
+
+@   IN  A 10.42.0.1
+*   IN  A 10.42.0.1
+
