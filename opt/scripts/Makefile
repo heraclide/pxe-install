@@ -465,6 +465,7 @@ fedora-iso:
 	--exclude '16' \
 	--exclude '17' \
 	--exclude '18' \
+	--exclude 'DVD' \
 	--exclude 'development' \
 	--exclude 'source' \
 	--exclude 'test' \
