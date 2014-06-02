@@ -251,6 +251,7 @@ debian-iso-all:	debian-iso debian-iso-testing update-pxe-debian
 .PHONY: debian-iso
 debian-iso:
 	mkdir -p ${PREFIX}/www/iso/debian
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/debian
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	ftp.de.debian.org::debian-cd \
 	${PREFIX}/www/iso/debian \
@@ -284,6 +285,7 @@ debian-iso:
 .PHONY: debian-iso-testing
 debian-iso-testing:
 	mkdir -p ${PREFIX}/www/iso/debian-testing
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/debian-testing
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	cdimage.debian.org::cdimage/weekly-builds \
 	${PREFIX}/www/iso/debian-testing \
@@ -357,6 +359,7 @@ ubuntu-iso-all:	ubuntu-iso lubuntu-iso-cdimage kubuntu-iso-cdimage xubuntu-iso-c
 ubuntu-iso:
 	#ftp.ciril.fr::pub/linux/ubuntu/releases/ \
 	mkdir -p ${PREFIX}/www/iso/ubuntu/ubuntu
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/ubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
         -B 65536 \
 	rsync://ftp.lip6.fr/Ubuntu/releases/ \
@@ -368,6 +371,7 @@ ubuntu-iso:
 .PHONY: lubuntu-iso-cdimage
 lubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/lubuntu
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/lubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/lubuntu/ \
@@ -379,6 +383,7 @@ lubuntu-iso-cdimage:
 .PHONY: kubuntu-iso-cdimage
 kubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/kubuntu
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/kubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/kubuntu/ \
@@ -390,6 +395,7 @@ kubuntu-iso-cdimage:
 .PHONY: xubuntu-iso-cdimage
 xubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/xubuntu
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/xubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/xubuntu/ \
@@ -451,6 +457,7 @@ fedora-iso-all:	fedora-iso fedora-iso-alt
 .PHONY: fedora-iso
 fedora-iso:
 	mkdir -p ${PREFIX}/www/iso/fedora/fedora
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/fedora
 	rsync ${RSYNC} \
 	ftp.ciril.fr::fedora \
 	${PREFIX}/www/iso/fedora/fedora \
@@ -477,6 +484,7 @@ fedora-iso:
 .PHONY: fedora-iso-alt
 fedora-iso-alt:
 	mkdir -p ${PREFIX}/www/iso/fedora/alt
+	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/fedora/alt
 	rsync ${RSYNC} \
 	alt.fedoraproject.org::alt \
 	${PREFIX}/www/iso/fedora/alt \
