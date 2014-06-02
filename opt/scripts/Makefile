@@ -252,7 +252,7 @@ update-pxe-debian:
 	bash ${PREFIX}/scripts/generate_pxe_for_debian_isos.sh
 
 .PHONY: ubuntu-all
-ubuntu-all: ubuntu-first-step ubuntu-second-step medibuntu
+ubuntu-all: ubuntu-first-step ubuntu-second-step 
 
 #	ftp.free.org::ubuntu  \
 .PHONY: ubuntu-first-step
@@ -276,23 +276,6 @@ ubuntu-second-step:
 	--exclude '*iso' 
 	bash /root/extract_ubuntu_repo_gz.sh
 
-# ancienne adresse rsync
-#	medibuntu@dunnewind.net::medibuntu \
-.PHONY: medibuntu
-medibuntu:
-	mkdir -p ${PREFIX}/www/ubuntu/medibuntu
-	nice -n19 ionice -c 3 rsync ${RSYNC} \
-	packages.medibuntu.org::medibuntu \
-	${PREFIX}/www/ubuntu/medibuntu \
-	${UBUNTU_EXCLUDES} \
-	--exclude hardy \
-	--exclude jaunty \
-	--exclude karmic \
-	--exclude maverick \
-	--exclude natty \
-	--exclude oneiric \
-	--exclude quantal \
-	--exclude morgue \
 
 .PHONY: ubuntu-iso-all
 ubuntu-iso-all:	ubuntu-iso lubuntu-iso-cdimage kubuntu-iso-cdimage xubuntu-iso-cdimage update-pxe-ubuntu
