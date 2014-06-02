@@ -210,7 +210,7 @@ debian-backports:
 	${DEBIAN_EXCLUDES}
 
 .PHONY: debian-iso-all
-debian-iso-all:	debian-iso update-pxe-debian
+debian-iso-all:	debian-iso debian-iso-testing update-pxe-debian
 
 #	ftp.de.debian.org::debian-cd 
 #	ftp.proxad.net::mirrors/cdimage.debian.org/debian-cd
@@ -284,6 +284,7 @@ debian-iso-testing:
 .PHONY: update-pxe-debian
 update-pxe-debian:
 	bash ${PREFIX}/scripts/generate_pxe_for_debian_isos.sh
+	bash ${PREFIX}/scripts/generate_pxe_for_debian_testing_isos.sh
 
 .PHONY: ubuntu-all
 ubuntu-all: ubuntu-first-step ubuntu-second-step 
