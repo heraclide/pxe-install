@@ -48,6 +48,7 @@ DEBIAN_EXCLUDES= \
 	--exclude '*.diff.gz' \
 	--exclude '*.orig.tar.gz' \
 	--exclude 'installer*' \
+	--exclude '*jigdo*' \
 
 UBUNTU_EXCLUDES= \
 	--exclude '*.dsc' \
@@ -59,6 +60,7 @@ UBUNTU_EXCLUDES= \
 	--exclude '*.orig.tar.bz2' \
 	--exclude '*.~tmp~' \
 	--exclude '*ps3*' \
+	--exclude '*jigdo*' \
 
 FEDORA_UPDATES_EXCLUDES= \
 	--exclude '1' \
@@ -127,6 +129,7 @@ FEDORA_EXCLUDES= \
 	--exclude 'drpms' \
 	--exclude 'iso' \
 	--exclude 'Live' \
+	--exclude '*jigdo*' \
 
 
 MAGEIA_EXCLUDES= \
