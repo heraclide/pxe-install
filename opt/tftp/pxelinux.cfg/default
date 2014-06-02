@@ -53,6 +53,11 @@ LABEL Debian
         KERNEL vesamenu.c32
         APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/debian.menu
 
+LABEL Debian testing
+        MENU LABEL Debian testing
+        KERNEL vesamenu.c32
+        APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/debian-testing.menu
+
 LABEL Fedora
         MENU LABEL Fedora
         KERNEL vesamenu.c32
