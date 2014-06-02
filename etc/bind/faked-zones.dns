@@ -7,9 +7,20 @@ zone "backports.org" {
         type master;
         file "/etc/bind/db.backports.org";
 };
-zone "debian.org" {
+
+zone "ftp.fr.debian.org" {
         type master;
-        file "/etc/bind/db.debian.org";
+        file "/etc/bind/db.ftp.fr.debian.org";
+};
+
+zone "security.debian.org" {
+        type master;
+        file "/etc/bind/db.security.debian.org";
+};
+
+zone "volatile.debian.org" {
+        type master;
+        file "/etc/bind/db.volatile.debian.org";
 };
 
 zone "archive.ubuntu.com" {
