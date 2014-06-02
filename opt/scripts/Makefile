@@ -87,9 +87,9 @@ UBUNTU_EXCLUDES_ISO= \
 	--exclude '*oneiric*' \
 	--exclude '*precise*' \
 	--exclude '*beta*' \
-        --exclude '*powerpc*' \
-        --exclude '*arm*' \
-        --exclude '*dvd*' \
+	--exclude '*powerpc*' \
+	--exclude '*arm*' \
+	--exclude '*dvd*' \
 	--exclude '*daily*' \
 	--exclude '*server*'
 
@@ -195,11 +195,11 @@ debian-first-step :
 	${PREFIX}/www/debian/debian \
 	${DEBIAN_EXCLUDES} \
 	--exclude '*iso' \
-        --exclude Packages* \
-        --exclude Sources* \
-        --exclude Release* \
-        --exclude InRelease \
-        --exclude i18n/* \
+	--exclude Packages* \
+	--exclude Sources* \
+	--exclude Release* \
+	--exclude InRelease \
+	--exclude i18n/* \
 
 .PHONY: debian-second-step
 debian-second-step :
@@ -336,7 +336,7 @@ ubuntu-first-step:
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	rsync://archive.ubuntu.com/ubuntu  \
 	${PREFIX}/www/ubuntu/ubuntu \
-        --exclude "Sources*" \
+	--exclude "Sources*" \
 	--exclude "Release*" \
 	${UBUNTU_EXCLUDES} \
 	--exclude '*iso' \
@@ -373,10 +373,10 @@ lubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/lubuntu
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/lubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
-        -B 65536 \
+	-B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/lubuntu/ \
 	${PREFIX}/www/iso/ubuntu/lubuntu \
-        --no-checksum \ 
+	--no-checksum \ 
 	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
 
@@ -385,10 +385,10 @@ kubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/kubuntu
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/kubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
-        -B 65536 \
+	-B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/kubuntu/ \
 	${PREFIX}/www/iso/ubuntu/kubuntu \
-        --no-checksum \ 
+	--no-checksum \ 
 	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
 
@@ -397,10 +397,10 @@ xubuntu-iso-cdimage:
 	mkdir -p ${PREFIX}/www/iso/ubuntu/xubuntu
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/xubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
-        -B 65536 \
+	-B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/xubuntu/ \
 	${PREFIX}/www/iso/ubuntu/xubuntu \
-        --no-checksum \ 
+	--no-checksum \ 
 	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
 
