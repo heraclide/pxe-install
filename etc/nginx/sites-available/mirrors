@@ -40,6 +40,7 @@ server {
         index index.html index.htm;
         server_name ftp.fr.debian.org
                     *.debian.org
+                    *.archive.debian.org
                     ;
 
 
@@ -69,5 +70,24 @@ server {
         access_log /var/log/nginx/security.debian.access.log;
         error_log /var/log/nginx/security.debian.org.errors.log;
 }
+
+server {
+        listen   80; ## listen for ipv4; this line is default and implied
+
+        root /opt/www/debian/debian-backports;
+        index index.html index.htm;
+        server_name backports.debian.org
+        *.backports.debian.org
+                    ;
+
+
+        location / {
+                allow all;
+        }
+
+        access_log /var/log/nginx/backports.debian.access.log;
+        error_log /var/log/nginx/backports.debian.org.errors.log;
+}
+
 
 
