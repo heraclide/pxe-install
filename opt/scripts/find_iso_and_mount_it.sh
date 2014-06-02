@@ -36,7 +36,7 @@ generate_exports() {
   PATH_TO_FIND_MOUNT=$1
   for currentDistro in `find $PATH_TO_FIND_MOUNT -mindepth 1 -maxdepth 1 -type d | sort -k7,12 -r -n`; do
     distroName=`basename $currentDistro`
-    echo "$PATH_TO_FIND_MOUNT/$distroName 10.42.0.0/16(ro,sync,no_root_squash,no_subtree_check)" >> /etc/export
+    echo "$PATH_TO_FIND_MOUNT/$distroName 10.42.0.0/16(ro,sync,no_root_squash,no_subtree_check)" >> /etc/exports
   done;
 }
 
