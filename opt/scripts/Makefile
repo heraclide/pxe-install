@@ -5,8 +5,7 @@ DEBUG=
 VERBOSE= --verbose --progress --stats
 DELETE= --delete-excluded --delete-after
 V6="-6"
-#LIMIT=--bwlimit=800
-LIMIT=--bwlimit=3000
+LIMIT=--bwlimit=30000
 
 .PHONY: distrib debian-all fedora-all mandriva-all ubuntu-all
 .PHONY: fedora fedora-livna fedora-rpmfusion
@@ -48,7 +47,6 @@ DEBIAN_EXCLUDES= \
 	--exclude '*.dsc' \
 	--exclude '*.diff.gz' \
 	--exclude '*.orig.tar.gz' \
-	--exclude '*experimental*' \
 	--exclude 'installer*' \
 
 UBUNTU_EXCLUDES= \
