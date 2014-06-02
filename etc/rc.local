@@ -16,6 +16,7 @@
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 /opt/scripts/find_iso_and_mount_it.sh /opt/tftp/sysresccd /opt/www/iso/sysresccd
 /opt/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
+/opt/scripts/find_iso_and_mount_it.sh /opt/tftp/debian-testing/ /opt/www/iso/debian-testing/
 /opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
 /opt/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
 /opt/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
