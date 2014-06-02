@@ -62,6 +62,37 @@ UBUNTU_EXCLUDES= \
 	--exclude '*ps3*' \
 	--exclude '*jigdo*' \
 
+UBUNTU_EXCLUDES_ISO= \
+	--exclude '*6.06*' \
+	--exclude '*8.04*' \
+	--exclude '*8.10*' \
+	--exclude '*9.04*' \
+	--exclude '*9.10*' \
+	--exclude '*10.04*' \
+	--exclude '*10.10*' \
+	--exclude '*11.04*' \
+	--exclude '*11.10*' \
+	--exclude '*12.10*' \
+	--exclude '*13.04*' \
+	--exclude '*13.10*' \
+	--exclude '*dapper*' \
+	--exclude '*edubuntu*' \
+	--exclude '*hardy*' \
+	--exclude '*intrepid*' \
+	--exclude '*jaunty*' \
+	--exclude '*karmic*' \
+	--exclude '*lucid*' \
+	--exclude '*maverick*' \
+	--exclude '*natty*' \
+	--exclude '*oneiric*' \
+	--exclude '*precise*' \
+	--exclude '*beta*' \
+        --exclude '*powerpc*' \
+        --exclude '*arm*' \
+        --exclude '*dvd*' \
+	--exclude '*daily*' \
+	--exclude '*server*'
+
 FEDORA_UPDATES_EXCLUDES= \
 	--exclude '1' \
 	--exclude '2' \
@@ -330,29 +361,7 @@ ubuntu-iso:
         -B 65536 \
 	rsync://ftp.lip6.fr/Ubuntu/releases/ \
 	${PREFIX}/www/iso/ubuntu/ubuntu \
-	--exclude *6.06* \
-	--exclude *8.04* \
-	--exclude *8.10* \
-	--exclude *9.04* \
-	--exclude *9.10* \
-	--exclude *10.04* \
-	--exclude *10.11* \
-	--exclude *11.04* \
-	--exclude *11.10* \
-	--exclude *12.10* \
-	--exclude *13.04* \
-	--exclude *dapper* \
-	--exclude *edubuntu* \
-	--exclude *hardy* \
-	--exclude *intrepid* \
-	--exclude *jaunty* \
-	--exclude *karmic* \
-	--exclude *lucid* \
-	--exclude *maverick* \
-	--exclude *natty* \
-	--exclude *oneiric* \
-	--exclude *beta* \
-	--exclude *server*
+	${UBUNTU_EXCLUDES_ISO} 
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu-fr/ /opt/www/iso/ubuntu/francisees/
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/ubuntu/ /opt/www/iso/ubuntu/ubuntu/
 
@@ -363,22 +372,8 @@ lubuntu-iso-cdimage:
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/lubuntu/ \
 	${PREFIX}/www/iso/ubuntu/lubuntu \
-	--exclude *daily* \
-	--exclude '*powerpc*' \
-	--exclude '*arm*' \
-	--exclude *beta* \
-	--exclude *6.06* \
-	--exclude *8.04* \
-	--exclude *8.10* \
-	--exclude *9.04* \
-	--exclude *9.10* \
-	--exclude *10.04* \
-	--exclude *10.11* \
-	--exclude *11.04* \
-	--exclude *11.10* \
-	--exclude *12.10* \
-	--exclude *13.04* \
-        --no-checksum 
+        --no-checksum \ 
+	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
 
 .PHONY: kubuntu-iso-cdimage
@@ -388,23 +383,8 @@ kubuntu-iso-cdimage:
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/kubuntu/ \
 	${PREFIX}/www/iso/ubuntu/kubuntu \
-	--exclude *daily* \
-	--exclude '*powerpc*' \
-	--exclude '*arm*' \
-	--exclude '*dvd*' \
-	--exclude *beta* \
-	--exclude *6.06* \
-	--exclude *8.04* \
-	--exclude *8.10* \
-	--exclude *9.04* \
-	--exclude *9.10* \
-	--exclude *10.04* \
-	--exclude *10.11* \
-	--exclude *11.04* \
-	--exclude *11.10* \
-	--exclude *12.10* \
-	--exclude *13.04* \
-        --no-checksum 
+        --no-checksum \ 
+	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
 
 .PHONY: xubuntu-iso-cdimage
@@ -414,22 +394,8 @@ xubuntu-iso-cdimage:
         -B 65536 \
 	rsync://fr.cdimage.ubuntu.com/cdimage/xubuntu/ \
 	${PREFIX}/www/iso/ubuntu/xubuntu \
-	--exclude *daily* \
-	--exclude '*powerpc*' \
-	--exclude '*arm*' \
-	--exclude *beta* \
-	--exclude *6.06* \
-	--exclude *8.04* \
-	--exclude *8.10* \
-	--exclude *9.04* \
-	--exclude *9.10* \
-	--exclude *10.04* \
-	--exclude *10.11* \
-	--exclude *11.04* \
-	--exclude *11.10* \
-	--exclude *12.10* \
-	--exclude *13.04* \
-        --no-checksum 
+        --no-checksum \ 
+	${UBUNTU_EXCLUDES_ISO}  
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
 
 .PHONY: update-pxe-ubuntu
