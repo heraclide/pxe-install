@@ -47,8 +47,7 @@ DEBIAN_EXCLUDES= \
 	--exclude '*.dsc' \
 	--exclude '*.diff.gz' \
 	--exclude '*.orig.tar.gz' \
-	--exclude 'installer*' \
-	--exclude '*jigdo*' \
+	--exclude 'installer*' 
 
 UBUNTU_EXCLUDES= \
 	--exclude '*.dsc' \
@@ -279,7 +278,8 @@ debian-iso:
 	--exclude '*rescue*' \
 	--exclude '*source*' \
 	--exclude '*freebsd*' \
-	--exclude '*iso-hybrid*'   
+	--exclude '*iso-hybrid*' \
+	--exclude '*jigdo*'   
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
 
 .PHONY: debian-iso-testing
@@ -317,7 +317,8 @@ debian-iso-testing:
 	--exclude '*lxde*' \
 	--exclude '*gnome*' \
 	--exclude '*multi-arch*' \
-	--exclude '*iso-hybrid*'   
+	--exclude '*iso-hybrid*' \
+	--exclude '*jigdo*'   
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian-testing/ /opt/www/iso/debian-testing/
 
 
