@@ -7,7 +7,7 @@ echo_menu() {
 	echo "LABEL $1"
 	echo "      MENU LABEL $1"
 	echo "      KERNEL $3"
-	echo "      APPEND boot=casper $5 netboot=nfs nfsroot=172.17.192.1:${6}/${2} keyb=fr initrd=$4 only-ubiquity --"
+	echo "      APPEND boot=casper $5 netboot=nfs nfsroot=10.42.0.1:${6}/${2} keyb=fr initrd=$4 only-ubiquity --"
 	echo ""
 	echo ""
 }

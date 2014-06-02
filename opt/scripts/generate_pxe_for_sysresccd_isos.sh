@@ -7,7 +7,7 @@ echo_menu() {
 	echo "LABEL $1"
 	echo "      MENU LABEL $1"
 	echo "      KERNEL $3"
-	echo "      APPEND scandelay=5 netboot=tftp://172.17.192.1/$5 setkeymap=fr initrd=$4 --"
+	echo "      APPEND scandelay=5 netboot=tftp://10.42.0.1/$5 setkeymap=fr initrd=$4 --"
 	echo ""
 	echo ""
 }

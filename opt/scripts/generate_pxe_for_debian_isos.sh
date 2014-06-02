@@ -7,7 +7,7 @@ echo_menu() {
 	echo "LABEL $1"
 	echo "      MENU LABEL $1"
 	echo "      KERNEL $3"
-	echo "      APPEND vga=normal netboot=nfs root=/dev/nfs nfsroot=172.17.192.1:/opt/tftp/debian/$2 initrd=$4 --"
+	echo "      APPEND vga=normal netboot=nfs root=/dev/nfs nfsroot=10.42.0.1:/opt/tftp/debian/$2 initrd=$4 --"
 	echo ""
 	echo ""
 }
