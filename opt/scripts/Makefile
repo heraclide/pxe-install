@@ -247,6 +247,40 @@ debian-iso:
 	--exclude '*iso-hybrid*'   
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian/ /opt/www/iso/debian/
 
+.PHONY: debian-iso-testing
+debian-iso-testing:
+	mkdir -p ${PREFIX}/www/iso/debian-testing
+	nice -n19 ionice -c 3 rsync ${RSYNC} \
+	cdimage.debian.org::cdimage/weekly-builds \
+	${PREFIX}/www/iso/debian-testing \
+	--exclude '*/source/*' \
+	--include 'iso-cd/*-CD-1.iso' \
+	--include 'iso-cd/*netinst.iso' \
+	--include 'iso-cd/*businesscard.iso' \
+	--include 'iso-cd/*SUMS*' \
+	--exclude '*iso-dvd*' \
+	--exclude '*CD-2*' \
+	--exclude '*CD-3*' \
+	--exclude '*CD-4*' \
+	--exclude '*CD-5*' \
+	--exclude '*CD-6*' \
+	--exclude '*CD-7*' \
+	--exclude '*CD-8*' \
+	--exclude '*DVD*' \
+	--exclude '*mips*' \
+	--exclude '*powerpc*' \
+	--exclude '*sparc*' \
+	--exclude '*aspel*' \
+	--exclude '*arm*' \
+	--exclude '*ia64*' \
+	--exclude '*s390*' \
+	--exclude '*rescue*' \
+	--exclude '*source*' \
+	--exclude '*freebsd*' \
+	--exclude '*iso-hybrid*'   
+	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian-testing/ /opt/www/iso/debian-testing/
+
+
 .PHONY: update-pxe-debian
 update-pxe-debian:
 	bash ${PREFIX}/scripts/generate_pxe_for_debian_isos.sh
