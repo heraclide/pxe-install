@@ -254,7 +254,6 @@ debian-iso-testing:
 	cdimage.debian.org::cdimage/weekly-builds \
 	${PREFIX}/www/iso/debian-testing \
 	--exclude '*/source/*' \
-	--include 'iso-cd/*-CD-1.iso' \
 	--include 'iso-cd/*netinst.iso' \
 	--include 'iso-cd/*businesscard.iso' \
 	--include 'iso-cd/*SUMS*' \
