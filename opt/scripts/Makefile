@@ -350,7 +350,6 @@ ubuntu-second-step:
 	${PREFIX}/www/ubuntu/ubuntu \
 	${UBUNTU_EXCLUDES} \
 	--exclude '*iso' 
-	bash /root/extract_ubuntu_repo_gz.sh
 
 
 .PHONY: ubuntu-iso-all
