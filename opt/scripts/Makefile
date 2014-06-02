@@ -374,10 +374,8 @@ lubuntu-iso-cdimage:
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/lubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	-B 65536 \
-	rsync://fr.cdimage.ubuntu.com/cdimage/lubuntu/ \
-	${PREFIX}/www/iso/ubuntu/lubuntu \
-	--no-checksum \ 
-	${UBUNTU_EXCLUDES_ISO}  
+	rsync://fr.cdimage.ubuntu.com/cdimage/lubuntu/ ${PREFIX}/www/iso/ubuntu/lubuntu \
+	--no-checksum ${UBUNTU_EXCLUDES_ISO}
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/lubuntu/ /opt/www/iso/ubuntu/lubuntu/
 
 .PHONY: kubuntu-iso-cdimage
@@ -386,10 +384,8 @@ kubuntu-iso-cdimage:
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/kubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	-B 65536 \
-	rsync://fr.cdimage.ubuntu.com/cdimage/kubuntu/ \
-	${PREFIX}/www/iso/ubuntu/kubuntu \
-	--no-checksum \ 
-	${UBUNTU_EXCLUDES_ISO}  
+	rsync://fr.cdimage.ubuntu.com/cdimage/kubuntu/ ${PREFIX}/www/iso/ubuntu/kubuntu \
+	--no-checksum ${UBUNTU_EXCLUDES_ISO}
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/kubuntu/ /opt/www/iso/ubuntu/kubuntu/
 
 .PHONY: xubuntu-iso-cdimage
@@ -398,10 +394,8 @@ xubuntu-iso-cdimage:
 	${PREFIX}/scripts/umount_isos.sh ${PREFIX}/www/iso/xubuntu
 	nice -n19 ionice -c 3 rsync ${RSYNC} \
 	-B 65536 \
-	rsync://fr.cdimage.ubuntu.com/cdimage/xubuntu/ \
-	${PREFIX}/www/iso/ubuntu/xubuntu \
-	--no-checksum \ 
-	${UBUNTU_EXCLUDES_ISO}  
+	rsync://fr.cdimage.ubuntu.com/cdimage/xubuntu/ ${PREFIX}/www/iso/ubuntu/xubuntu \
+	--no-checksum ${UBUNTU_EXCLUDES_ISO} 
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/xubuntu/ /opt/www/iso/ubuntu/xubuntu/
 
 .PHONY: update-pxe-ubuntu
