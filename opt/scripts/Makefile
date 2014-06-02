@@ -277,6 +277,10 @@ debian-iso-testing:
 	--exclude '*rescue*' \
 	--exclude '*source*' \
 	--exclude '*freebsd*' \
+	--exclude '*xfce*' \
+	--exclude '*kde*' \
+	--exclude '*lxde*' \
+	--exclude '*gnome*' \
 	--exclude '*iso-hybrid*'   
 	${PREFIX}/scripts/find_iso_and_mount_it.sh /opt/tftp/debian-testing/ /opt/www/iso/debian-testing/
 
