@@ -6,6 +6,7 @@ server {
   server_name isos;
 
   location / {
+    autoindex on;
     allow all;
   }
 
